@@ -1,8 +1,10 @@
 package iut.jeu_echec.Jeu.Pieces;
 
+import iut.jeu_echec.Jeu.TableEchec;
 import javafx.util.Pair;
 
 import java.util.List;
+import java.util.Scanner;
 
 public abstract class Piece {
     private int typePiece;
@@ -20,7 +22,30 @@ public abstract class Piece {
 
     public abstract List<Pair<Integer,Integer>> mouvementValides();
 
-    public abstract void mouvement(List<Pair<Integer,Integer>> valides);
+    public void mouvement(List<Pair<Integer,Integer>> mvtValides) {
+        System.out.println("Mouvements valides: ");
+        for (int i = 0; i < mvtValides.size(); ++i) {
+            Pair<Integer, Integer> move = mvtValides.get(i);
+            System.out.println("Move #" + i + ": (" + move.getKey() + ", " + move.getValue() + ")");
+        }
+
+        System.out.println("Entrez le numéro que vous voulez jouer: ");
+        Scanner in = new Scanner(System.in);
+
+        int key = in.nextInt();
+
+        try {
+            Pair<Integer,Integer> move = mvtValides.get(key);
+            final int oldX = this.getX();
+            final int oldY = this.getY();
+            this.setX(move.getKey());
+            this.setY(move.getValue());
+
+            TableEchec.updateBoard(this,oldX,oldY);
+        } catch (IndexOutOfBoundsException e) {
+            return;
+        }
+    }
     public abstract void graphic();
 
 

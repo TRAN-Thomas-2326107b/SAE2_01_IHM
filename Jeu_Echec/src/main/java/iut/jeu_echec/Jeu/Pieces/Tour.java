@@ -15,50 +15,59 @@ public class Tour extends Piece {
 
     @Override
     public List<Pair<Integer, Integer>> mouvementValides() {
-        return null;
-    };
-
-    @Override
-    public void mouvement(List<Pair<Integer, Integer>> valides)
-
-    @Override
-    public void mouvement() {
         final int posX = this.getX();
         final int posY = this.getY();
-        List<Pair<Integer,Integer>> mouvementValides = new ArrayList<>();
+        List<Pair<Integer,Integer>> mvtValides = new ArrayList<>();
 
+        //mouvement vers le bas
         int i = 1;
-        while (TableEchec.BOARD[posX + i][posY] == null || this.getEquipe() != TableEchec.BOARD[posX + i][posY].getEquipe()) {
-            mouvementValides.add(new Pair<>(posX+i,posY));
+        while ((posX + i) < 8 &&
+                TableEchec.BOARD[posX + i][posY] == null
+                || (posX + i) < 8 && this.getEquipe() != TableEchec.BOARD[posX + i][posY].getEquipe()) {
+            mvtValides.add(new Pair<>(posX+i,posY));
+            if ( TableEchec.BOARD[posX + i][posY] != null && this.getEquipe() != TableEchec.BOARD[posX + i][posY].getEquipe())
+                break;
             ++i;
         }
 
+        //mouvement vers le haut
         int j = 1;
-        while (TableEchec.BOARD[posX - j][posY] == null || this.getEquipe() != TableEchec.BOARD[posX - j][posY].getEquipe()) {
-            mouvementValides.add(new Pair<>(posX-j,posY));
+        while ((posX - j) >= 0 &&
+                TableEchec.BOARD[posX - j][posY] == null
+                || (posX - j) >= 0 && this.getEquipe() != TableEchec.BOARD[posX - j][posY].getEquipe()) {
+
+            mvtValides.add(new Pair<>(posX-j,posY));
+            if ( TableEchec.BOARD[posX - j][posY] !=  null && this.getEquipe() != TableEchec.BOARD[posX - j][posY].getEquipe())
+                break;
             ++j;
         }
 
+        //mouvement vers la droite
         int k = 1;
-        while (TableEchec.BOARD[posX][posY + k] == null || this.getEquipe() != TableEchec.BOARD[posX][posY + k].getEquipe()) {
-            mouvementValides.add(new Pair<>(posX,posY+k));
+        while ((posY + k) < 8 &&
+                TableEchec.BOARD[posX][posY + k] == null ||
+                (posY + k) < 8 && this.getEquipe() != TableEchec.BOARD[posX][posY + k].getEquipe()) {
+            mvtValides.add(new Pair<>(posX,posY+k));
+            if ( TableEchec.BOARD[posX][posY + k] !=  null && this.getEquipe() != TableEchec.BOARD[posX][posY + k].getEquipe())
+                break;
             ++k;
         }
 
-
+        //mouvement vers la gauche
         int l = 1;
-        while (TableEchec.BOARD[posX][posY - l] == null || this.getEquipe() != TableEchec.BOARD[posX][posY - l].getEquipe()) {
-            mouvementValides.add(new Pair<>(posX,posY-l));
+        while ( (posY - l) >= 0 &&
+                TableEchec.BOARD[posX][posY - l] == null ||
+                (posY - l) >= 0 && this.getEquipe() != TableEchec.BOARD[posX][posY - l].getEquipe()) {
+            mvtValides.add(new Pair<>(posX,posY-l));
+            if ( TableEchec.BOARD[posX][posY - l] !=  null && this.getEquipe() != TableEchec.BOARD[posX][posY - l].getEquipe())
+                break;
             ++l;
         }
 
-        System.out.println("Valid Moves:");
-        for (Pair<Integer, Integer> move : mouvementValides) {
-            System.out.println("Move: (" + move.getKey() + ", " + move.getValue() + ")");
-        }
+        return mvtValides;
 
-        //TableEchec.updateBoard(this,oldX,oldY);
     }
+
 
     @Override
     public void graphic() {

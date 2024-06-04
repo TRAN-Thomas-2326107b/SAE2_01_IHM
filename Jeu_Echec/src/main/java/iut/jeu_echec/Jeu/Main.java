@@ -9,8 +9,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int R = Pieces.RIEN.ordinal();
-
         // 0 noir 1 blanc
 
         Piece[][] test_board = TableEchec.BOARD;
@@ -21,16 +19,29 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
 
-        int x,y = -1;
 
-        x = in.nextInt();
-        y = in.nextInt();
+        boolean exitGame = false;
 
-        Piece pp = test_board[x][y];
 
-        pp.mouvement(pp.mouvementValides());
+        while (!exitGame) {
+            int x,y = -1;
+            x = in.nextInt();
+            if (x == 69)
+                break;
+            y = in.nextInt();
 
-        TableEchec.afficheBoard(test_board);
+            Piece pp = test_board[x][y];
+            if (pp == null)
+                continue;
+            pp.mouvement(pp.mouvementValides());
+
+            TableEchec.afficheBoard(test_board);
+
+
+        }
+
+
+
 
 
 
