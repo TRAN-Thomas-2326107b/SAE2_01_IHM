@@ -1,0 +1,68 @@
+/* Chess Board Styling */
+.grid-pane {
+    -fx-padding: 10;
+    -fx-hgap: 5;
+    -fx-vgap: 5;
+    -fx-background-color: #ffffff;
+    -fx-border-width: 5px;
+}
+
+.rectangle {
+    -fx-arc-height: 5;
+    -fx-arc-width: 5;
+    -fx-stroke: black;
+    -fx-stroke-type: inside;
+}
+
+.rectangle.light {
+    -fx-fill: #ebecd0;
+}
+
+.rectangle.dark {
+    -fx-fill: #739552;
+}
+
+.image-view {
+    -fx-fit-height: 72;
+    -fx-fit-width: 44;
+    -fx-preserve-ratio: true;
+    -fx-pick-on-bounds: true;
+}
+
+/* General UI Styling */
+.anchor-pane {
+    -fx-background-color: #f0f0f0;
+}
+
+.border-pane {
+    -fx-background-color: #f0f0f0;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+    -fx-padding: 10 20;
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+}
+
+.choice-box {
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+/* Custom Shadows */
+.inner-shadow {
+    -fx-effect: innershadow(two-pass-box, rgba(0, 0, 0, 0.7), 10, 0.5, 0, 0);
+}
