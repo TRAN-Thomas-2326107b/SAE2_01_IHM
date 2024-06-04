@@ -375,7 +375,7 @@
             <HBox prefHeight="8.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
          </bottom>
       </BorderPane>
-      <HBox layoutY="393.0" prefHeight="55.0" prefWidth="359.0" style="-fx-background-color: #302e2b;">
+      <HBox layoutY="393.0" prefHeight="46.0" prefWidth="360.0" style="-fx-background-color: #302e2b;">
          <children>
             <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -405,7 +405,6 @@
                </children>
             </VBox>
          </children></HBox>
-      <Rectangle fill="#31302c" height="62.0" layoutX="376.0" layoutY="389.0" stroke="#31302c" strokeLineJoin="BEVEL" strokeMiterLimit="0.0" strokeWidth="0.0" width="224.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#262522" height="12.0" layoutY="443.0" stroke="BLACK" strokeType="INSIDE" width="602.0" />
+      <Rectangle fill="#31302c" height="47.0" layoutX="376.0" layoutY="389.0" stroke="#31302c" strokeLineJoin="BEVEL" strokeMiterLimit="0.0" strokeWidth="0.0" width="224.0" />
    </children>
 </AnchorPane>
