@@ -4,8 +4,7 @@
     -fx-hgap: 5;
     -fx-vgap: 5;
     -fx-background-color: #ffffff;
-    -fx-border-color: #000000;
-    -fx-border-width: 2px;
+    -fx-border-width: 5px;
 }
 
 .rectangle {

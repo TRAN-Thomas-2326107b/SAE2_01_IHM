@@ -34,6 +34,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Glow?>
@@ -49,11 +50,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="440.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <left>
-            <GridPane prefHeight="260.0" prefWidth="356.0" BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="358.0" scaleShape="false" BorderPane.alignment="CENTER">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -78,247 +79,244 @@
                   <Insets />
                </BorderPane.margin>
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="42.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="42.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="42.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="42.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="42.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="42.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="42.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="42.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" layoutX="10.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" layoutX="100.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="41.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" layoutX="10.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" layoutX="100.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                      <image>
-                        <Image url="@ChessPiecePng/bb.png" />
+                        <Image url="@ressources/pion/bb.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/br.png" />
+                        <Image url="@ressources/pion/br.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bn.png" />
+                        <Image url="@ressources/pion/bn.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
                      <image>
-                        <Image url="@ChessPiecePng/bq.png" />
+                        <Image url="@ressources/pion/bq.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
                      <image>
-                        <Image url="@ChessPiecePng/bk.png" />
+                        <Image url="@ressources/pion/bk.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
                      <image>
-                        <Image url="@ChessPiecePng/bb.png" />
+                        <Image url="@ressources/pion/bb.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
                      <image>
-                        <Image url="@ChessPiecePng/bn.png" />
+                        <Image url="@ressources/pion/bn.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
                      <image>
-                        <Image url="@ChessPiecePng/br.png" />
+                        <Image url="@ressources/pion/br.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                  <ImageView fitHeight="44.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
                      <image>
-                        <Image url="@ChessPiecePng/bp.png" />
+                        <Image url="@ressources/pion/bp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wr.png" />
+                        <Image url="@ressources/pion/wr.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                  <ImageView fitHeight="72.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wr.png" />
+                        <Image url="@ressources/pion/wr.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wn.png" />
+                        <Image url="@ressources/pion/wn.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wn.png" />
+                        <Image url="@ressources/pion/wn.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wb.png" />
+                        <Image url="@ressources/pion/wb.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wb.png" />
+                        <Image url="@ressources/pion/wb.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="80.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                  <ImageView fitHeight="80.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wq.png" />
+                        <Image url="@ressources/pion/wq.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wk.png" />
+                        <Image url="@ressources/pion/wk.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                      <image>
-                        <Image url="@ChessPiecePng/wp.png" />
+                        <Image url="@ressources/pion/wp.png" />
                      </image>
                   </ImageView>
                </children>
             </GridPane>
          </left>
-         <bottom>
-            <HBox prefHeight="34.0" prefWidth="598.0" style="-fx-background-color: #302e2b;" BorderPane.alignment="CENTER" />
-         </bottom>
          <right>
-            <VBox alignment="BASELINE_CENTER" prefHeight="368.0" prefWidth="232.0" style="-fx-background-color: #262522;" BorderPane.alignment="CENTER">
+            <VBox alignment="BASELINE_CENTER" prefHeight="349.0" prefWidth="224.0" style="-fx-background-color: #262522;" BorderPane.alignment="CENTER">
                <children>
                   <VBox />
-                  <HBox alignment="TOP_CENTER" prefHeight="75.0" prefWidth="232.0">
+                  <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="233.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="159.0" text="Button">
+                        <ComboBox prefWidth="150.0">
                            <HBox.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                              <Insets top="10.0" />
                            </HBox.margin>
-                        </Button>
+                        </ComboBox>
                      </children>
                   </HBox>
                   <Button alignment="TOP_CENTER" blendMode="HARD_LIGHT" cache="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #81b64c; -fx-font-weight: bold;" text="Jouer" textAlignment="CENTER" textFill="WHITE">
@@ -342,20 +340,23 @@
             </VBox>
          </right>
          <top>
-            <HBox prefHeight="50.0" prefWidth="498.0" style="-fx-background-color: #302e2b; -fx-border-color: #000000;" BorderPane.alignment="CENTER">
+            <HBox prefHeight="24.0" prefWidth="600.0" style="-fx-background-color: #302e2b; -fx-border-color: #000000;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="47.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icon/black_400.png" />
+                        <Image url="@ressources/icon/black_400.png" />
                      </image>
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </ImageView>
-                  <VBox alignment="TOP_CENTER" prefHeight="52.0" prefWidth="134.0">
+                  <VBox alignment="TOP_CENTER" prefHeight="22.0" prefWidth="122.0">
                      <children>
-                        <Label prefHeight="22.0" prefWidth="202.0" text="M. Morancey" textFill="WHITE" />
-                        <Label layoutX="58.0" layoutY="10.0" prefHeight="20.0" prefWidth="141.0" text="Parties Joués :     18 456" textFill="WHITE">
+                        <Label prefHeight="0.0" prefWidth="147.0" text="M. Morancey" textFill="WHITE">
+                           <font>
+                              <Font size="10.0" />
+                           </font></Label>
+                        <Label layoutX="58.0" layoutY="10.0" prefHeight="0.0" prefWidth="123.0" text="Parties Joués :     18 456" textFill="WHITE">
                            <font>
                               <Font size="9.0" />
                            </font>
@@ -370,9 +371,41 @@
                </children>
             </HBox>
          </top>
-         <center>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="420.0" stroke="BLACK" strokeType="INSIDE" width="12.0" BorderPane.alignment="CENTER" />
-         </center>
+         <bottom>
+            <HBox prefHeight="8.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+         </bottom>
       </BorderPane>
+      <HBox layoutY="393.0" prefHeight="55.0" prefWidth="359.0" style="-fx-background-color: #302e2b;">
+         <children>
+            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ressources/icon/white_400.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox alignment="TOP_CENTER" prefHeight="22.0" prefWidth="122.0">
+               <children>
+                  <Label prefHeight="0.0" prefWidth="147.0" text="A. Casali" textFill="WHITE">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="58.0" layoutY="10.0" prefHeight="0.0" prefWidth="123.0" text="Parties Joués :     18 456" textFill="WHITE">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="57.0" layoutY="30.0" prefHeight="2.0" prefWidth="199.0" text="Parties Gagnées : 8" textFill="WHITE">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children></HBox>
+      <Rectangle fill="#31302c" height="62.0" layoutX="376.0" layoutY="389.0" stroke="#31302c" strokeLineJoin="BEVEL" strokeMiterLimit="0.0" strokeWidth="0.0" width="224.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#262522" height="12.0" layoutY="443.0" stroke="BLACK" strokeType="INSIDE" width="602.0" />
    </children>
 </AnchorPane>
