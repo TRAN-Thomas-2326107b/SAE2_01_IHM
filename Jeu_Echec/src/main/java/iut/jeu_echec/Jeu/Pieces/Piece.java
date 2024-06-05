@@ -48,6 +48,7 @@ public abstract class Piece {
             return;
         }
     }
+
     public abstract void graphic();
 
 

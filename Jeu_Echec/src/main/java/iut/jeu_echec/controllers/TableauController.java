@@ -62,13 +62,13 @@ public class TableauController {
             return;
 
         //rect.setFill(Paint.valueOf("red"));
-        if (TableEchec.BOARD[rowIndex][colIndex] == null && selectedPiece == null)
+        if (TableEchec.BOARD[rowIndex][colIndex] == null && selectedPiece == null  )
             return;
 
-        System.out.println(TableEchec.BOARD[rowIndex][colIndex]);
+        System.out.println("tour actuel: " + String.valueOf(TableEchec.getTourActuel()));
 
 
-        if (selectedPiece == null) {
+        if (selectedPiece == null && TableEchec.BOARD[rowIndex][colIndex].getEquipe() == TableEchec.getTourActuel()) {
             selectedCol = colIndex;
             selectedRow = rowIndex;
 
@@ -77,6 +77,8 @@ public class TableauController {
 
             selectedPiece.afficheMouvement(selectedPiece.mouvementValides());
         }
+
+
 
         if (selectedPiece != null) {
 
@@ -88,6 +90,7 @@ public class TableauController {
             boolean estValide = mvtValides.contains(caseVoulue);
             System.out.println(estValide);
 
+
             if (estValide) {
                 StackPane parentPane = (StackPane) pieceImg.getParent();
                 parentPane.getChildren().remove(pieceImg);
@@ -95,16 +98,33 @@ public class TableauController {
                 // Add the pieceImg to the new GridPane cell (spane)
                 spane.getChildren().add(pieceImg);
 
-                selectedPiece.mouvement(mvtValides, caseVoulue);
+                Piece targetPiece = TableEchec.BOARD[rowIndex][colIndex];
 
+                if (targetPiece == null)
+                    selectedPiece.mouvement(mvtValides, caseVoulue);
+                else {
+                    spane.getChildren().remove(imView);
+                    selectedPiece.mouvement(mvtValides,caseVoulue);
+                    // TODO l'ajouter en bas du pseudo
+                }
                 selectedPiece = null;
                 pieceImg = null;
+                TableEchec.changeTour();
             }
 
             TableEchec.afficheBoard(TableEchec.BOARD);
 
         }
 
+        if (selectedPiece != null && (TableEchec.BOARD[rowIndex][colIndex] != null && selectedPiece.getEquipe() == TableEchec.BOARD[rowIndex][colIndex].getEquipe())) {
+            selectedCol = colIndex;
+            selectedRow = rowIndex;
+
+            selectedPiece = TableEchec.BOARD[rowIndex][colIndex];
+            pieceImg = imView;
+            selectedPiece.afficheMouvement(selectedPiece.mouvementValides());
+            return;
+        }
 
         System.out.println("row: " + rowIndex + " col: " + colIndex);
 

@@ -59,7 +59,7 @@ public class Fou extends Piece {
         int p = 1;
         while ( (posX - o) >= 0 && (posY + p) < 8 && TableEchec.BOARD[posX - o][posY + p] == null
                 || (posX - o) >= 0 && (posY + p) < 8 && this.getEquipe() != TableEchec.BOARD[posX - o][posY + p].getEquipe()){
-            mvtValides.add(new Pair<>(posX-o,posY-p));
+            mvtValides.add(new Pair<>(posX-o,posY+p));
             if ( TableEchec.BOARD[posX - o][posY + p] !=  null && this.getEquipe() != TableEchec.BOARD[posX - o][posY + p].getEquipe())
                 break;
             ++o;
