@@ -1,411 +1,803 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
-  All rights reserved. Use is subject to license terms.
-
-  This file is available and licensed under the following license:
-
-  Redistribution and use in source and binary forms, with or without
-  modification, are permitted provided that the following conditions
-  are met:
-
-  - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-  - Redistributions in binary form must reproduce the above copyright
-    notice, this list of conditions and the following disclaimer in
-    the documentation and/or other materials provided with the distribution.
-  - Neither the name of Oracle Corporation nor the names of its
-    contributors may be used to endorse or promote products derived
-    from this software without specific prior written permission.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
--->
-
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="440.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="816.0" style="-fx-background-color: #302E2B;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.jeu_echec.controllers.TableauController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" maxWidth="656.4000000000001" minWidth="10.0" prefWidth="466.6" />
+      <ColumnConstraints hgrow="NEVER" maxWidth="656.4000000000001" minWidth="10.0" prefWidth="11.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="340.0" minWidth="10.0" prefWidth="400.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="52.0" />
+      <RowConstraints maxHeight="447.200048828125" minHeight="10.0" prefHeight="425.20000915527345" valignment="CENTER" vgrow="NEVER" />
+      <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
-      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-         <left>
-            <GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="358.0" scaleShape="false" BorderPane.alignment="CENTER">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
+      <GridPane fx:id="tableauGrid" alignment="TOP_CENTER" prefHeight="187.0" prefWidth="374.0" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="40.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="40.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="40.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="40.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="40.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="40.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="40.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" minWidth="40.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="60.0" valignment="CENTER" vgrow="NEVER" />
+         </rowConstraints>
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="47.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="4" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" layoutX="10.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" layoutX="100.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="5" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="6" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="7" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#739552" height="45.0" stroke="BLACK" strokeType="INSIDE" width="45.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ebecd0" height="45.0" stroke="BLACK" strokeType="INSIDE" width="46.0" />
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
-                     <image>
-                        <Image url="@imgs/pions/bb.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/pions/br.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                  <Label text="8" textFill="#739552" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bp.png" />
+                     </image>
+                     <StackPane.margin>
+                        <Insets bottom="4.0" />
+                     </StackPane.margin>
+                  </ImageView>
+                  <Label text="7" textFill="#ebecd0" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <Label text="6" textFill="#739552" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <Label text="5" textFill="#ebecd0" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <Label text="4" textFill="#739552" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <Label text="3" textFill="#ebecd0" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wp.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="2" textFill="#739552" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="0" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wr.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="1" textFill="#ebecd0" StackPane.alignment="TOP_LEFT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="a" textFill="#ebecd0" StackPane.alignment="BOTTOM_RIGHT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/pions/bn.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wn.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="b" textFill="#739552" StackPane.alignment="BOTTOM_RIGHT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bb.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wb.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="c" textFill="#ebecd0" StackPane.alignment="BOTTOM_RIGHT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/pions/bq.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
-                     <image>
-                        <Image url="@imgs/pions/bk.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
-                     <image>
-                        <Image url="@imgs/pions/bb.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
-                     <image>
-                        <Image url="@imgs/pions/bn.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
-                     <image>
-                        <Image url="@imgs/pions/br.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/pions/bp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imgs/pions/bp.png" />
+                        <Image url="@imgs/pions/wp.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@imgs/pions/bp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@imgs/pions/bp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@imgs/pions/bp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@imgs/pions/bp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="44.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@imgs/pions/bp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
-                     <image>
-                        <Image url="@imgs/pions/bp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wr.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wr.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wn.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wn.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wb.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wb.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="80.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/pions/wq.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                  <Label text="d" textFill="#739552" StackPane.alignment="BOTTOM_RIGHT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="0">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bk.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imgs/pions/wk.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="72.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
-                     <image>
-                        <Image url="@imgs/pions/wp.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </GridPane>
-         </left>
-         <right>
-            <VBox alignment="BASELINE_CENTER" prefHeight="349.0" prefWidth="224.0" style="-fx-background-color: #262522;" BorderPane.alignment="CENTER">
-               <children>
-                  <VBox />
-                  <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="233.0">
-                     <children>
-                        <ComboBox prefWidth="150.0">
-                           <HBox.margin>
-                              <Insets top="10.0" />
-                           </HBox.margin>
-                        </ComboBox>
-                     </children>
-                  </HBox>
-                  <Button alignment="TOP_CENTER" blendMode="HARD_LIGHT" cache="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="152.0" style="-fx-background-color: #81b64c; -fx-font-weight: bold;" text="Jouer" textAlignment="CENTER" textFill="WHITE">
+                  <Label text="e" textFill="#ebecd0" StackPane.alignment="BOTTOM_RIGHT">
                      <font>
-                        <Font name="Arimo Bold" size="16.0" />
+                        <Font name="Lato Regular" size="18.0" />
                      </font>
-                     <effect>
-                        <ColorAdjust brightness="-0.21" contrast="0.21" />
-                     </effect>
-                     <VBox.margin>
-                        <Insets top="12.0" />
-                     </VBox.margin>
-                  </Button>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
                </children>
-               <BorderPane.margin>
-                  <Insets />
-               </BorderPane.margin>
-               <effect>
-                  <Glow />
-               </effect>
-            </VBox>
-         </right>
-         <top>
-            <HBox prefHeight="24.0" prefWidth="600.0" style="-fx-background-color: #302e2b; -fx-border-color: #000000;" BorderPane.alignment="CENTER">
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="0">
                <children>
-                  <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@ressources/icon/black_400.png" />
+                        <Image url="@imgs/pions/bb.png" />
                      </image>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
                   </ImageView>
-                  <VBox alignment="TOP_CENTER" prefHeight="22.0" prefWidth="122.0">
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wb.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="f" textFill="#739552" StackPane.alignment="BOTTOM_RIGHT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="0">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bn.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wn.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="g" textFill="#ebecd0" StackPane.alignment="BOTTOM_RIGHT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="2.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="0">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/br.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/bp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="2">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="4">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="5">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="6">
+               <children>
+                  <Rectangle fill="#739552" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="7">
+               <children>
+                  <Rectangle fill="#ebecd0" height="54.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="59.0" />
+                  <ImageView fitHeight="58.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/pions/wr.png" />
+                     </image>
+                  </ImageView>
+                  <Label text="h" textFill="#739552" StackPane.alignment="BOTTOM_RIGHT">
+                     <font>
+                        <Font name="Lato Regular" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </children>
+      </GridPane>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="42.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/icons/black_400.png" />
+               </image>
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="73.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="65.0" prefWidth="201.0">
                      <children>
-                        <Label prefHeight="0.0" prefWidth="147.0" text="M. Morancey" textFill="WHITE">
+                        <Label fx:id="blackName" prefHeight="0.0" prefWidth="147.0" text="M. Morancey" textFill="WHITE">
                            <font>
                               <Font size="10.0" />
-                           </font></Label>
-                        <Label layoutX="58.0" layoutY="10.0" prefHeight="0.0" prefWidth="123.0" text="Parties Joués :     18 456" textFill="WHITE">
-                           <font>
-                              <Font size="9.0" />
                            </font>
                         </Label>
-                        <Label layoutX="57.0" layoutY="30.0" prefHeight="2.0" prefWidth="199.0" text="Parties Gagnées : 8" textFill="WHITE">
+                        <Label layoutX="58.0" layoutY="10.0" prefHeight="12.0" prefWidth="144.0" text="Parties Joués : " textFill="WHITE">
                            <font>
-                              <Font size="9.0" />
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="57.0" layoutY="30.0" prefHeight="11.0" prefWidth="143.0" text="Parties Gagnées : " textFill="WHITE">
+                           <font>
+                              <Font size="8.0" />
                            </font>
                         </Label>
                      </children>
                   </VBox>
                </children>
-            </HBox>
-         </top>
-         <bottom>
-            <HBox prefHeight="8.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
-         </bottom>
-      </BorderPane>
-      <HBox layoutY="393.0" prefHeight="55.0" prefWidth="359.0" style="-fx-background-color: #302e2b;">
+            </StackPane>
+         </children>
+      </HBox>
+      <HBox prefHeight="52.0" prefWidth="184.0" GridPane.rowIndex="2">
          <children>
-            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="58.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@ressources/icon/white_400.png" />
+                  <Image url="@imgs/icons/white_400.png" />
                </image>
                <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets top="5.0" />
                </HBox.margin>
             </ImageView>
-            <VBox alignment="TOP_CENTER" prefHeight="22.0" prefWidth="122.0">
+            <VBox alignment="TOP_CENTER" prefHeight="52.0" prefWidth="77.0">
                <children>
-                  <Label prefHeight="0.0" prefWidth="147.0" text="A. Casali" textFill="WHITE">
+                  <Label fx:id="blackName1" prefHeight="0.0" prefWidth="147.0" text="A. Casali" textFill="WHITE">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Label>
-                  <Label layoutX="58.0" layoutY="10.0" prefHeight="0.0" prefWidth="123.0" text="Parties Joués :     18 456" textFill="WHITE">
+                  <Label layoutX="58.0" layoutY="10.0" prefHeight="12.0" prefWidth="144.0" text="Parties Joués : " textFill="WHITE">
                      <font>
-                        <Font size="9.0" />
+                        <Font size="8.0" />
                      </font>
                   </Label>
-                  <Label layoutX="57.0" layoutY="30.0" prefHeight="2.0" prefWidth="199.0" text="Parties Gagnées : 8" textFill="WHITE">
+                  <Label layoutX="57.0" layoutY="30.0" prefHeight="11.0" prefWidth="143.0" text="Parties Gagnées : " textFill="WHITE">
                      <font>
-                        <Font size="9.0" />
+                        <Font size="8.0" />
                      </font>
                   </Label>
                </children>
             </VBox>
-         </children></HBox>
-      <Rectangle fill="#31302c" height="62.0" layoutX="376.0" layoutY="389.0" stroke="#31302c" strokeLineJoin="BEVEL" strokeMiterLimit="0.0" strokeWidth="0.0" width="224.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#262522" height="12.0" layoutY="443.0" stroke="BLACK" strokeType="INSIDE" width="602.0" />
+            <StackPane prefHeight="52.0" prefWidth="332.0">
+               <children>
+                  <Rectangle arcHeight="10.0" arcWidth="5.0" fill="#565656" height="38.0" nodeOrientation="LEFT_TO_RIGHT" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="148.0" StackPane.alignment="CENTER_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="4.0" />
+                     </StackPane.margin>
+                  </Rectangle>
+                  <Label disable="true" text="10:00" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
+                     <StackPane.margin>
+                        <Insets bottom="5.0" right="12.0" />
+                     </StackPane.margin>
+                     <font>
+                        <Font name="Segoe UI Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+      <GridPane GridPane.columnIndex="2">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+         </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="50.0" prefWidth="122.0" style="-fx-background-color: #262522;">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="122.0" text="Nouvelle partie" textFill="WHITE" wrapText="true" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="50.0" prefWidth="48.0" style="-fx-background-color: #21201D;" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Parties" textFill="WHITE" />
+               </children></VBox>
+            <VBox alignment="CENTER" prefHeight="50.0" prefWidth="105.0" style="-fx-background-color: #21201D;" GridPane.columnIndex="2">
+               <children>
+                  <Label text="Label" textFill="WHITE" />
+               </children></VBox>
+         </children>
+      </GridPane>
+      <VBox alignment="TOP_CENTER" prefHeight="425.0" prefWidth="338.0" style="-fx-background-color: #262522;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <children>
+            <Accordion>
+               <panes>
+                  <TitledPane alignment="CENTER" contentDisplay="CENTER" text="Timer" />
+               </panes>
+            </Accordion>
+            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="342.0" text="10 min">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin></Button>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button alignment="TOP_CENTER" blendMode="SRC_ATOP" cache="true" mnemonicParsing="false" prefHeight="31.0" prefWidth="179.0" style="-fx-background-color: #82b64c; -fx-font-weight: bold;" text="Jouer" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Noto Serif Display Regular" size="16.0" />
+                     </font>
+                     <effect>
+                        <ColorAdjust brightness="-0.21" contrast="0.21" />
+                     </effect>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="31.0" prefWidth="179.0" style="-fx-background-color: #000000;" text="Tournois" textFill="WHITE">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <StackPane prefHeight="52.0" prefWidth="430.0">
+         <children>
+            <Rectangle arcHeight="10.0" arcWidth="5.0" fill="#565656" height="38.0" nodeOrientation="LEFT_TO_RIGHT" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="148.0" StackPane.alignment="CENTER_RIGHT">
+               <StackPane.margin>
+                  <Insets bottom="4.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Label disable="true" text="10:00" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
+               <StackPane.margin>
+                  <Insets bottom="5.0" right="12.0" />
+               </StackPane.margin>
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
    </children>
-</AnchorPane>
+   <padding>
+      <Insets left="5.0" />
+   </padding>
+</GridPane>
+
