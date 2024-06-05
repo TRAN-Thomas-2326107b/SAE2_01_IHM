@@ -1,12 +1,10 @@
 package iut.jeu_echec.Jeu.Pieces;
 
-import iut.jeu_echec.Jeu.TableEchec;
-import javafx.scene.control.Tab;
+import iut.jeu_echec.Jeu.TableauEchec;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Pion extends Piece {
 
@@ -21,48 +19,48 @@ public class Pion extends Piece {
         final int posY = this.getY();
         List<Pair<Integer, Integer>> mvtValides = new ArrayList<>();
 
-        if (this.getEquipe() == TableEchec.eNoir) {
+        if (this.getEquipe() == TableauEchec.eNoir) {
             // pion noir avance de 2 cases
-            if (posX == 1 && TableEchec.BOARD[posX + 2][posY] == null && TableEchec.BOARD[posX + 1][posY] == null) {
+            if (posX == 1 && TableauEchec.BOARD[posX + 2][posY] == null && TableauEchec.BOARD[posX + 1][posY] == null) {
                 mvtValides.add(new Pair<>(posX + 2, posY));
             }
             // pion noir avant d'1 cases
-            if (posX + 1 < 8 && TableEchec.BOARD[posX + 1][posY] == null) {
+            if (posX + 1 < 8 && TableauEchec.BOARD[posX + 1][posY] == null) {
                 mvtValides.add(new Pair<>(posX + 1, posY));
             }
             // pion noir capture en diagonale-gauche
             if (posX + 1 < 8 && posY - 1 >= 0) {
-                Piece diag1 = TableEchec.BOARD[posX + 1][posY - 1];
+                Piece diag1 = TableauEchec.BOARD[posX + 1][posY - 1];
                 if (diag1 != null && this.getEquipe() != diag1.getEquipe()) {
                     mvtValides.add(new Pair<>(posX + 1, posY - 1));
                 }
             }
             // pion noir capture en diagonale-droite
             if (posX + 1 < 8 && posY + 1 < 8) {
-                Piece diag2 = TableEchec.BOARD[posX + 1][posY + 1];
+                Piece diag2 = TableauEchec.BOARD[posX + 1][posY + 1];
                 if (diag2 != null && this.getEquipe() != diag2.getEquipe()) {
                     mvtValides.add(new Pair<>(posX + 1, posY + 1));
                 }
             }
         } else {
             // pion blanc avance de 2 cases
-            if (posX == 6 && TableEchec.BOARD[posX - 2][posY] == null && TableEchec.BOARD[posX - 1][posY] == null) {
+            if (posX == 6 && TableauEchec.BOARD[posX - 2][posY] == null && TableauEchec.BOARD[posX - 1][posY] == null) {
                 mvtValides.add(new Pair<>(posX - 2, posY));
             }
             // pion blanc avance d'1 case
-            if (posX - 1 >= 0 && TableEchec.BOARD[posX - 1][posY] == null) {
+            if (posX - 1 >= 0 && TableauEchec.BOARD[posX - 1][posY] == null) {
                 mvtValides.add(new Pair<>(posX - 1, posY));
             }
             // pion blanc capture en diagonale-gauche
             if (posX - 1 >= 0 && posY - 1 >= 0) {
-                Piece diag1 = TableEchec.BOARD[posX - 1][posY - 1];
+                Piece diag1 = TableauEchec.BOARD[posX - 1][posY - 1];
                 if (diag1 != null && this.getEquipe() != diag1.getEquipe()) {
                     mvtValides.add(new Pair<>(posX - 1, posY - 1));
                 }
             }
             // pion blanc capture en diagonale-droite
             if (posX - 1 >= 0 && posY + 1 < 8) {
-                Piece diag2 = TableEchec.BOARD[posX - 1][posY + 1];
+                Piece diag2 = TableauEchec.BOARD[posX - 1][posY + 1];
                 if (diag2 != null && this.getEquipe() != diag2.getEquipe()) {
                     mvtValides.add(new Pair<>(posX - 1, posY + 1));
                 }

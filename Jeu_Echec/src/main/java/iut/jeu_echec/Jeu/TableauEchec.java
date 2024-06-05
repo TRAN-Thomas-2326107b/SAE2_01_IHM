@@ -2,14 +2,12 @@ package iut.jeu_echec.Jeu;
 
 import iut.jeu_echec.Jeu.Pieces.*;
 
-public class TableEchec {
+public class TableauEchec {
     public static final int TAILLE = 8;
 
     public static int NOMBRE_COUPS = 0;
     public static final byte eNoir = 0;
     public static final byte eBlanc = 1;
-
-
 
     private static byte tourActuel = eBlanc;
 

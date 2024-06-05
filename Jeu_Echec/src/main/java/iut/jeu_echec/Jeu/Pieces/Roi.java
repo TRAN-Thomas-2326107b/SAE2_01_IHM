@@ -1,6 +1,6 @@
 package iut.jeu_echec.Jeu.Pieces;
 
-import iut.jeu_echec.Jeu.TableEchec;
+import iut.jeu_echec.Jeu.TableauEchec;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class Roi extends Piece{
 
             // Vérifie que le roi reste dans la grille
             if (newX >= 0 && newX < 8 && newY >= 0 && newY < 8) {
-                Piece destinationPiece = TableEchec.BOARD[newX][newY];
+                Piece destinationPiece = TableauEchec.BOARD[newX][newY];
                 // Si la case de destination est vide ou contient un ennemi, le mouvement est valide
                 if (destinationPiece == null || (destinationPiece != null && destinationPiece.getEquipe() != this.getEquipe())) {
                     mvtValides.add(new Pair<>(newX, newY));

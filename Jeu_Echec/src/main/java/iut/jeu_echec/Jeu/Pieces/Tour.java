@@ -1,6 +1,6 @@
 package iut.jeu_echec.Jeu.Pieces;
 
-import iut.jeu_echec.Jeu.TableEchec;
+import iut.jeu_echec.Jeu.TableauEchec;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -22,10 +22,10 @@ public class Tour extends Piece {
         //mouvement valide vers le bas
         int i = 1;
         while ((posX + i) < 8 &&
-                TableEchec.BOARD[posX + i][posY] == null
-                || (posX + i) < 8 && this.getEquipe() != TableEchec.BOARD[posX + i][posY].getEquipe()) {
+                TableauEchec.BOARD[posX + i][posY] == null
+                || (posX + i) < 8 && this.getEquipe() != TableauEchec.BOARD[posX + i][posY].getEquipe()) {
             mvtValides.add(new Pair<>(posX+i,posY));
-            if ( TableEchec.BOARD[posX + i][posY] != null && this.getEquipe() != TableEchec.BOARD[posX + i][posY].getEquipe())
+            if ( TableauEchec.BOARD[posX + i][posY] != null && this.getEquipe() != TableauEchec.BOARD[posX + i][posY].getEquipe())
                 break;
             ++i;
         }
@@ -33,11 +33,11 @@ public class Tour extends Piece {
         //mouvement valide vers le haut
         int j = 1;
         while ((posX - j) >= 0 &&
-                TableEchec.BOARD[posX - j][posY] == null
-                || (posX - j) >= 0 && this.getEquipe() != TableEchec.BOARD[posX - j][posY].getEquipe()) {
+                TableauEchec.BOARD[posX - j][posY] == null
+                || (posX - j) >= 0 && this.getEquipe() != TableauEchec.BOARD[posX - j][posY].getEquipe()) {
 
             mvtValides.add(new Pair<>(posX-j,posY));
-            if ( TableEchec.BOARD[posX - j][posY] !=  null && this.getEquipe() != TableEchec.BOARD[posX - j][posY].getEquipe())
+            if ( TableauEchec.BOARD[posX - j][posY] !=  null && this.getEquipe() != TableauEchec.BOARD[posX - j][posY].getEquipe())
                 break;
             ++j;
         }
@@ -45,10 +45,10 @@ public class Tour extends Piece {
         //mouvement valide vers la droite
         int k = 1;
         while ((posY + k) < 8 &&
-                TableEchec.BOARD[posX][posY + k] == null ||
-                (posY + k) < 8 && this.getEquipe() != TableEchec.BOARD[posX][posY + k].getEquipe()) {
+                TableauEchec.BOARD[posX][posY + k] == null ||
+                (posY + k) < 8 && this.getEquipe() != TableauEchec.BOARD[posX][posY + k].getEquipe()) {
             mvtValides.add(new Pair<>(posX,posY+k));
-            if ( TableEchec.BOARD[posX][posY + k] !=  null && this.getEquipe() != TableEchec.BOARD[posX][posY + k].getEquipe())
+            if ( TableauEchec.BOARD[posX][posY + k] !=  null && this.getEquipe() != TableauEchec.BOARD[posX][posY + k].getEquipe())
                 break;
             ++k;
         }
@@ -56,10 +56,10 @@ public class Tour extends Piece {
         //mouvement valide vers la gauche
         int l = 1;
         while ( (posY - l) >= 0 &&
-                TableEchec.BOARD[posX][posY - l] == null ||
-                (posY - l) >= 0 && this.getEquipe() != TableEchec.BOARD[posX][posY - l].getEquipe()) {
+                TableauEchec.BOARD[posX][posY - l] == null ||
+                (posY - l) >= 0 && this.getEquipe() != TableauEchec.BOARD[posX][posY - l].getEquipe()) {
             mvtValides.add(new Pair<>(posX,posY-l));
-            if ( TableEchec.BOARD[posX][posY - l] !=  null && this.getEquipe() != TableEchec.BOARD[posX][posY - l].getEquipe())
+            if ( TableauEchec.BOARD[posX][posY - l] !=  null && this.getEquipe() != TableauEchec.BOARD[posX][posY - l].getEquipe())
                 break;
             ++l;
         }

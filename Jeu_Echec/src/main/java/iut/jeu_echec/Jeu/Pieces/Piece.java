@@ -1,10 +1,9 @@
 package iut.jeu_echec.Jeu.Pieces;
 
-import iut.jeu_echec.Jeu.TableEchec;
+import iut.jeu_echec.Jeu.TableauEchec;
 import javafx.util.Pair;
 
 import java.util.List;
-import java.util.Scanner;
 
 public abstract class Piece {
     private int typePiece;
@@ -42,7 +41,7 @@ public abstract class Piece {
                 final int oldY = this.getY();
                 this.setX(caseVoulue.getKey());
                 this.setY(caseVoulue.getValue());
-                TableEchec.updateBoard(this,oldX,oldY);
+                TableauEchec.updateBoard(this,oldX,oldY);
             }
         } catch (IndexOutOfBoundsException e) {
             return;
