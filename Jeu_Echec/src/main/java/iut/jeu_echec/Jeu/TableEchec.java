@@ -8,6 +8,8 @@ public class TableEchec {
     public static int NOMBRE_COUPS = 0;
     public static final byte eNoir = 0;
     public static final byte eBlanc = 1;
+
+    // Grille intiale
     public static final Piece[][] BOARD = {
             {new Tour(eNoir,0,0), new Cavalier(eNoir,0,1), new Fou(eNoir,0,2), new Roi(eNoir,0,3), new Dame(eNoir,0,4), new Fou(eNoir,0,5), new Cavalier(eNoir,0,6), new Tour(eNoir,0,7)},
             {new Pion(eNoir,1,0), new Pion(eNoir,1,1), new Pion(eNoir,1,2), new Pion(eNoir,1,3), new Pion(eNoir,1,4), new Pion(eNoir,1,5), new Pion(eNoir,1,6), new Pion(eNoir,1,7)},

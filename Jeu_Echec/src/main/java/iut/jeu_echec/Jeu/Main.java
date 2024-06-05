@@ -33,7 +33,7 @@ public class Main {
             Piece pp = test_board[x][y];
             if (pp == null)
                 continue;
-            pp.mouvement(pp.mouvementValides());
+            //pp.mouvement(pp.mouvementValides());
 
             TableEchec.afficheBoard(test_board);
 

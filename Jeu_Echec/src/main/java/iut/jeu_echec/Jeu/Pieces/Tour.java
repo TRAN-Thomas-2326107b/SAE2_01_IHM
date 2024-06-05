@@ -19,7 +19,7 @@ public class Tour extends Piece {
         final int posY = this.getY();
         List<Pair<Integer,Integer>> mvtValides = new ArrayList<>();
 
-        //mouvement vers le bas
+        //mouvement valide vers le bas
         int i = 1;
         while ((posX + i) < 8 &&
                 TableEchec.BOARD[posX + i][posY] == null
@@ -30,7 +30,7 @@ public class Tour extends Piece {
             ++i;
         }
 
-        //mouvement vers le haut
+        //mouvement valide vers le haut
         int j = 1;
         while ((posX - j) >= 0 &&
                 TableEchec.BOARD[posX - j][posY] == null
@@ -42,7 +42,7 @@ public class Tour extends Piece {
             ++j;
         }
 
-        //mouvement vers la droite
+        //mouvement valide vers la droite
         int k = 1;
         while ((posY + k) < 8 &&
                 TableEchec.BOARD[posX][posY + k] == null ||
@@ -53,7 +53,7 @@ public class Tour extends Piece {
             ++k;
         }
 
-        //mouvement vers la gauche
+        //mouvement valide vers la gauche
         int l = 1;
         while ( (posY - l) >= 0 &&
                 TableEchec.BOARD[posX][posY - l] == null ||

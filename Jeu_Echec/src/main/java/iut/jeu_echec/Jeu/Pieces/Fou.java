@@ -18,7 +18,7 @@ public class Fou extends Piece {
         final int posY = this.getY();
         List<Pair<Integer,Integer>> mvtValides = new ArrayList<>();
 
-        //mouvement vers bas-gauche
+        //mouvement valide vers bas-gauche
         int i = 1;
         int j = 1;
         while ((posX + i) < 8 && (posY - j) >= 0 && TableEchec.BOARD[posX + i][posY - j] == null
@@ -30,7 +30,7 @@ public class Fou extends Piece {
             ++j;
         }
 
-        //mouvement vers bas-droit
+        //mouvement valide vers bas-droit
         int k = 1;
         int l = 1;
         while ((posX + k) < 8 && (posY + l) < 8 && TableEchec.BOARD[posX + k][posY + l] == null
@@ -42,7 +42,7 @@ public class Fou extends Piece {
             ++l;
         }
 
-        //mouvement vers haut-gauche
+        //mouvement valide vers haut-gauche
         int m = 1;
         int n = 1;
         while ((posX - m) >= 0 && (posY - n) >= 0 && TableEchec.BOARD[posX - m][posY - n] == null
@@ -54,7 +54,7 @@ public class Fou extends Piece {
             ++n;
         }
 
-        //mouvement vers haut-droit
+        //mouvement valide vers haut-droit
         int o = 1;
         int p = 1;
         while ( (posX - o) >= 0 && (posY + p) < 8 && TableEchec.BOARD[posX - o][posY + p] == null

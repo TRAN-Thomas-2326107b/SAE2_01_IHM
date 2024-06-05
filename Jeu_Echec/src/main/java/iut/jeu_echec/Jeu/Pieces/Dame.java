@@ -18,10 +18,9 @@ public class Dame extends Piece{
         final int posY = this.getY();
         List<Pair<Integer,Integer>> mvtValides = new ArrayList<>();
 
-        //mouvement vers le bas
+        //mouvement valide vers le bas
         int a = 1;
-        while ((posX + a) < 8 &&
-                TableEchec.BOARD[posX + a][posY] == null
+        while ((posX + a) < 8 && TableEchec.BOARD[posX + a][posY] == null
                 || (posX + a) < 8 && this.getEquipe() != TableEchec.BOARD[posX + a][posY].getEquipe()) {
             mvtValides.add(new Pair<>(posX+a,posY));
             if ( TableEchec.BOARD[posX + a][posY] != null && this.getEquipe() != TableEchec.BOARD[posX + a][posY].getEquipe())
@@ -29,34 +28,30 @@ public class Dame extends Piece{
             ++a;
         }
 
-        //mouvement vers le haut
+        //mouvement valide vers le haut
         int b = 1;
-        while ((posX - b) >= 0 &&
-                TableEchec.BOARD[posX - b][posY] == null
+        while ((posX - b) >= 0 && TableEchec.BOARD[posX - b][posY] == null
                 || (posX - b) >= 0 && this.getEquipe() != TableEchec.BOARD[posX - b][posY].getEquipe()) {
-
             mvtValides.add(new Pair<>(posX-b,posY));
             if ( TableEchec.BOARD[posX - b][posY] !=  null && this.getEquipe() != TableEchec.BOARD[posX - b][posY].getEquipe())
                 break;
             ++b;
         }
 
-        //mouvement vers la droite
+        //mouvement valide vers la droite
         int c = 1;
-        while ((posY + c) < 8 &&
-                TableEchec.BOARD[posX][posY + c] == null ||
-                (posY + c) < 8 && this.getEquipe() != TableEchec.BOARD[posX][posY + c].getEquipe()) {
+        while ((posY + c) < 8 && TableEchec.BOARD[posX][posY + c] == null
+                || (posY + c) < 8 && this.getEquipe() != TableEchec.BOARD[posX][posY + c].getEquipe()) {
             mvtValides.add(new Pair<>(posX,posY+c));
             if ( TableEchec.BOARD[posX][posY + c] !=  null && this.getEquipe() != TableEchec.BOARD[posX][posY + c].getEquipe())
                 break;
             ++c;
         }
 
-        //mouvement vers la gauche
+        //mouvement valide vers la gauche
         int d = 1;
-        while ( (posY - d) >= 0 &&
-                TableEchec.BOARD[posX][posY - d] == null ||
-                (posY - d) >= 0 && this.getEquipe() != TableEchec.BOARD[posX][posY - d].getEquipe()) {
+        while ( (posY - d) >= 0 && TableEchec.BOARD[posX][posY - d] == null
+                || (posY - d) >= 0 && this.getEquipe() != TableEchec.BOARD[posX][posY - d].getEquipe()) {
             mvtValides.add(new Pair<>(posX,posY-d));
             if ( TableEchec.BOARD[posX][posY - d] !=  null && this.getEquipe() != TableEchec.BOARD[posX][posY - d].getEquipe())
                 break;
@@ -64,7 +59,7 @@ public class Dame extends Piece{
         }
 
 
-        //mouvement vers bas-gauche
+        //mouvement valide vers bas-gauche
         int i = 1;
         int j = 1;
         while ((posX + i) < 8 && (posY - j) >= 0 && TableEchec.BOARD[posX + i][posY - j] == null
@@ -76,7 +71,7 @@ public class Dame extends Piece{
             ++j;
         }
 
-        //mouvement vers bas-droit
+        //mouvement valide vers bas-droit
         int k = 1;
         int l = 1;
         while ((posX + k) < 8 && (posY + l) < 8 && TableEchec.BOARD[posX + k][posY + l] == null
@@ -88,7 +83,7 @@ public class Dame extends Piece{
             ++l;
         }
 
-        //mouvement vers haut-gauche
+        //mouvement valide vers haut-gauche
         int m = 1;
         int n = 1;
         while ((posX - m) >= 0 && (posY - n) >= 0 && TableEchec.BOARD[posX - m][posY - n] == null
@@ -100,7 +95,7 @@ public class Dame extends Piece{
             ++n;
         }
 
-        //mouvement vers haut-droit
+        //mouvement valide vers haut-droit
         int o = 1;
         int p = 1;
         while ( (posX - o) >= 0 && (posY + p) < 8 && TableEchec.BOARD[posX - o][posY + p] == null
