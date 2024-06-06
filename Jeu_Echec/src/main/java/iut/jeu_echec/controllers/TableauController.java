@@ -56,8 +56,7 @@ public class TableauController {
 
 
     // create a list of all the moves already played :
-
-
+    private List<Pair<Pair<Integer, Integer>, Pair<Integer, Integer>>> movesPlayed = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -115,6 +114,9 @@ public class TableauController {
         if (rect == null)
             return;
 
+        if (TableauEchec.didGameEnd())
+            return;
+
         //rect.setFill(Paint.valueOf("red"));
         if (TableauEchec.BOARD[rowIndex][colIndex] == null && selectedPiece == null  )
             return;
@@ -138,7 +140,7 @@ public class TableauController {
             currentMoveStart = new Pair<>(new Pair<>(rowIndex, colIndex), (Color) rect.getFill());
             rect.setFill(((Color) rect.getFill()).brighter());
 
-            selectedPiece.afficheMouvement(selectedPiece.mouvementValides());
+            //selectedPiece.afficheMouvement(selectedPiece.mouvementValides());
         }
 
 
@@ -149,7 +151,7 @@ public class TableauController {
 
             List<Pair<Integer,Integer>> mvtValides = selectedPiece.mouvementValides();
 
-            selectedPiece.afficheMouvement(mvtValides);
+            //selectedPiece.afficheMouvement(mvtValides);
 
 
             Pair<Integer,Integer> caseVoulue = new Pair<>(rowIndex,colIndex);
@@ -191,6 +193,9 @@ public class TableauController {
                 currentMoveEnd = new Pair<>(new Pair<>(rowIndex, colIndex), (Color) rect.getFill());
                 rect.setFill(((Color) rect.getFill()).brighter());
 
+                movesPlayed.add(new Pair<>(currentMoveStart.getKey(),currentMoveEnd.getKey()));
+
+
                 if (lastMoveStart != null) {
                     resetColor(lastMoveStart);
                     supprimeNoeuds(captureSquares);
@@ -217,7 +222,7 @@ public class TableauController {
             }
 
 
-            TableauEchec.afficheBoard(TableauEchec.BOARD);
+            //TableauEchec.afficheBoard(TableauEchec.BOARD);
 
         }
 
@@ -321,9 +326,6 @@ public class TableauController {
             captureSquare.setOpacity(0.75);
             //captureSquare.setBlendMode(BlendMode.MULTIPLY);
 
-            System.out.println("ajout: ");
-            System.out.println(pane.getChildren());
-
             captureSquares.add(captureSquare);
             if (pane != null) {
                 pane.getChildren().add(captureSquare);
@@ -353,8 +355,6 @@ public class TableauController {
         for (Node node : nodes) {
             StackPane pane = (StackPane) node.getParent();
             if (pane != null) {
-                System.out.println(pane.getChildren());
-                System.out.println("removing: " + node);
                 pane.getChildren().remove(node);
             }
         }
