@@ -47,11 +47,6 @@ public class Cavalier extends Piece {
 
 
     @Override
-    public void graphic() {
-
-    }
-
-    @Override
     public String toString() {
         return "C" + (this.getEquipe() == (byte)0 ? "_N" : "_B");
     }

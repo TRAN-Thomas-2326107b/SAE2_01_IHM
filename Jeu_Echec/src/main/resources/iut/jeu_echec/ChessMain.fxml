@@ -659,7 +659,7 @@
                         <Insets bottom="2.0" top="4.0" />
                      </StackPane.margin>
                   </Rectangle>
-                  <Label disable="true" text="10:00" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
+                  <Label disable="true" text="10:00" textFill="WHITE" StackPane.alignment="CENTER_RIGHT" fx:id="tempsJOueurNoir">
                      <StackPane.margin>
                         <Insets right="12.0" top="2.0" />
                      </StackPane.margin>
@@ -694,7 +694,7 @@
                         <Insets bottom="4.0" />
                      </StackPane.margin>
                   </Rectangle>
-                  <Label disable="true" text="10:00" textFill="WHITE" StackPane.alignment="CENTER_RIGHT">
+                  <Label disable="true" text="10:00" textFill="WHITE" StackPane.alignment="CENTER_RIGHT" fx:id="tempsJoueurBlanc">
                      <StackPane.margin>
                         <Insets bottom="5.0" right="12.0" />
                      </StackPane.margin>

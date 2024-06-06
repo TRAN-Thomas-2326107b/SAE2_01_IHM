@@ -71,11 +71,6 @@ public class Fou extends Piece {
     }
 
     @Override
-    public void graphic() {
-
-    }
-
-    @Override
     public String toString() {
         return "F" + (this.getEquipe() == (byte)0 ? "_N" : "_B");
     }

@@ -69,10 +69,6 @@ public class Tour extends Piece {
     }
 
 
-    @Override
-    public void graphic() {
-
-    }
 
     @Override
     public String toString() {

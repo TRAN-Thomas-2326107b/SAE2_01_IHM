@@ -3,13 +3,14 @@ package iut.jeu_echec.Jeu.Pieces;
 import iut.jeu_echec.Jeu.TableauEchec;
 import javafx.util.Pair;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Piece {
     private int typePiece;
     private int x;
     private int y;
-    private byte equipe;
+    private final byte equipe;
 
 
     Piece(Pieces type, byte equipe, int x, int y) {
@@ -43,12 +44,23 @@ public abstract class Piece {
                 this.setY(caseVoulue.getValue());
                 TableauEchec.updateBoard(this,oldX,oldY);
             }
-        } catch (IndexOutOfBoundsException e) {
-            return;
+        } catch (IndexOutOfBoundsException ignored) {
         }
     }
 
-    public abstract void graphic();
+
+    public static List<Pair<Integer, Integer>> canEat(List<Pair<Integer, Integer>> mouvementsValides) {
+
+        List<Pair<Integer, Integer>> eatable = new ArrayList<>();
+
+        for (Pair<Integer, Integer> move : mouvementsValides) {
+            if (TableauEchec.BOARD[move.getKey()][move.getValue()] != null) {
+                eatable.add(move);
+            }
+        }
+
+        return eatable;
+    }
 
 
     public int getX() {

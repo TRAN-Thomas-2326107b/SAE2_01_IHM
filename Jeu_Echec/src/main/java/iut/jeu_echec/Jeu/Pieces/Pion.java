@@ -71,10 +71,6 @@ public class Pion extends Piece {
     };
 
 
-    @Override
-    public void graphic() {
-
-    }
 
     @Override
     public String toString() {

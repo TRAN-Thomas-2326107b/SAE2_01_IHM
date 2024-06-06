@@ -43,10 +43,6 @@ public class Roi extends Piece{
     }
 
 
-    @Override
-    public void graphic() {
-
-    }
 
     @Override
     public String toString() {
