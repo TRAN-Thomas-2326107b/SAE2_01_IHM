@@ -94,6 +94,9 @@ public class PlayersController {
         content.getChildren().add(newPlayer);
     }
 
+    /**
+     * Affiche liste joueurs
+     */
     public void displayPlayers() {
         final int MAX_SELECTION = 2;
         Label feedbackLabel = new Label();
@@ -109,6 +112,13 @@ public class PlayersController {
         }
     }
 
+    /**
+     * Configure la vbox du nv joueur
+     * @param player Le joueur dont la Vbox va étre crée
+     * @param feedbackLabel label
+     * @param maxSelection max joueur
+     * @return Une vbox pour le nv joueur
+     */
     private VBox createPlayerVBox(PlayerManager.Player player, Label feedbackLabel, int maxSelection) {
         VBox newPlayer = new VBox();
         VBox.setMargin(newPlayer, new Insets(0, 0, 5, 0));
@@ -169,6 +179,10 @@ public class PlayersController {
         return newPlayer;
     }
 
+    /**
+     * Permet de vvérifier que nous somme bien dans la sélection
+     * @param inPlayers
+     */
     public void setInPlayers(boolean inPlayers) {
         isInPlayers = inPlayers;
     }
@@ -181,22 +195,42 @@ public class PlayersController {
         return selectedPlayers;
     }
 
+    /**
+     * Configure le scoll pane des joueurs
+     * @param playersScrollList Le scroll pane que l'on configure
+     */
     public void setPlayersScrollList(ScrollPane playersScrollList) {
         this.playersScrollList = playersScrollList;
     }
 
+
+    /**
+     *
+     * @return Retourne le scroll pane des joueurs
+     */
     public ScrollPane getPlayersScrollList() {
         return playersScrollList;
     }
 
+    /** Configure l'imageview
+     *
+     * @param btnAddNewPlayer L'image view qui sert comme bouton pour ajouté des nvs joueurs
+     */
     public void setBtnAddNewPlayer(ImageView btnAddNewPlayer) {
         this.btnAddNewPlayer = btnAddNewPlayer;
     }
 
+    /**
+     *
+     * @return Retourne l'image view qui sert de bouton
+     */
     public ImageView getBtnAddNewPlayer() {
         return btnAddNewPlayer;
     }
 
+    /**
+     * Sauvegardes les informations
+     */
     public void savePlayers() {
         playerManager.savePlayers();
     }

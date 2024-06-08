@@ -6,16 +6,36 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Classe Roi héritant de la classe Piece.
+ * Représente un Roi dans le jeu d'échec.
+ * Une Roi peut se déplacer d'une case uniquement dans toutes les directions.
+ */
 public class Roi extends Piece{
 
 
 
     private boolean enEchec = false;
 
+
+    /**
+     * Constructeurs de la classe Roi
+     *
+     * @param equipe L'équipe à laquelle appartient le Roi.
+     * @param x La position sur l'axe des abscisses de la Tour sur l'échiquier.
+     * @param y
+     */
     public Roi(byte equipe, int x, int y) {
         super(Pieces.ROI,equipe,x,y);
     }
 
+    /**
+     * Méthode calculant la liste des mouvements valides du Roi à sa
+     * position actuelle.
+     *
+     * @return Les mouvements valides
+     */
     @Override
     public List<Pair<Integer, Integer>> mouvementValides() {
         final int posX = this.getX();
@@ -54,12 +74,21 @@ public class Roi extends Piece{
         this.enEchec = estEnEchec;
     }
 
+
+    /**
+     * Récupere l'image du Roi selon le chemin indiquée
+     * @return L'image du Roi
+     */
     public String getImage() {
         return this.getEquipe() == TableauEchec.eNoir ? "/iut/jeu_echec/imgs/pions/bk.png" : "/iut/jeu_echec/imgs/pions/wk.png";
     }
 
 
-
+    /**
+     *Redéfinition de "toString"
+     *
+     * @return Type piece et équipe
+     */
     @Override
     public String toString() {
         return "R" + (this.getEquipe() == (byte)0 ? "_N" : "_B");

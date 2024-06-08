@@ -7,6 +7,8 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public abstract class Piece {
     private int typePiece;
     private int x;

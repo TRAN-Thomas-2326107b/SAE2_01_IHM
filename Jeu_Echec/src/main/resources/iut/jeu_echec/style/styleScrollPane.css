@@ -1,0 +1,7 @@
+
+/** Fond d'écran du ScrollPane **/
+.scroll-pane .viewport {
+    -fx-background-color: #302e2b;
+}	
+
+

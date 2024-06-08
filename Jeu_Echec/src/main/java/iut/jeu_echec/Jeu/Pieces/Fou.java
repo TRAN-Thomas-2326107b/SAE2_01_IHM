@@ -6,12 +6,28 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class fou héritant de la classe Piece
+ * Représente un Fou dans le jeu d'échec.
+ * Le fou peut se déplacer diagonalement uniquement
+ */
 public class Fou extends Piece {
 
+    /**
+     * Constructeurs de la classe Fou
+     *
+     * @param equipe L'équipe a laquelle appartient le Fou.
+     * @param x La position sur l'axe des abscisses du Fou sur l'échiquier.
+     * @param y La position sur l'axe des ordonnées du Fou sur l'échiquier.
+     */
     public Fou(byte equipe, int x, int y) {
         super(Pieces.FOU,equipe,x,y);
     }
 
+    /**
+     * Méthode calculant la liste des mouvements valides de la Dame à sa
+     * @return Les mouvements valides
+     */
     @Override
     public List<Pair<Integer, Integer>> mouvementValides() {
         final int posX = this.getX();
@@ -69,10 +85,19 @@ public class Fou extends Piece {
         return mvtValides;
     }
 
+    /**
+     * Récupere l'image du Fou selon le chemin indiquée
+     * @return L'image du Fou
+     */
     public String getImage() {
         return this.getEquipe() == TableauEchec.eNoir ? "/iut/jeu_echec/imgs/pions/bb.png" : "/iut/jeu_echec/imgs/pions/wb.png";
     }
 
+    /**
+     *Redéfinition de "toString"
+     *
+     * @return Type piece et équipe
+     */
     @Override
     public String toString() {
         return "F" + (this.getEquipe() == (byte)0 ? "_N" : "_B");

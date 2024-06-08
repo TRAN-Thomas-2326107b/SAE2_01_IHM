@@ -26,7 +26,7 @@ public class Dame extends Piece{
 
     /**
      * Méthode calculant la liste des mouvements valides de la Dame à sa 
-     * @return
+     * @return Les mouvements valides
      */
     @Override
     public List<Pair<Integer, Integer>> mouvementValides() {
@@ -125,13 +125,20 @@ public class Dame extends Piece{
         return mvtValides;
     }
 
-
+    /**
+     * Récupere l'image de la dame selon le chemin indiquée
+     * @return L'image de la dame
+     */
     public String getImage() {
         return this.getEquipe() == TableauEchec.eNoir ? "/iut/jeu_echec/imgs/pions/bq.png" : "/iut/jeu_echec/imgs/pions/wq.png";
     }
 
 
-
+    /**
+     *Redéfinition de "toString"
+     *
+     * @return Type piece et équipe
+     */
     @Override
     public String toString() {
         return "D" + (this.getEquipe() == (byte)0 ? "_N" : "_B");

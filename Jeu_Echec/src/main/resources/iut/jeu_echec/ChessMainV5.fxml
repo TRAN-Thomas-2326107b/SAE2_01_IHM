@@ -23,7 +23,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="816.0" style="-fx-background-color: #302E2B;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.jeu_echec.controllers.TableauController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="816.0" style="-fx-background-color: #302E2B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iut.jeu_echec.controllers.TableauController">
    <columnConstraints>
       <ColumnConstraints hgrow="NEVER" maxWidth="656.4000000000001" minWidth="10.0" prefWidth="466.6" />
       <ColumnConstraints hgrow="NEVER" maxWidth="656.4000000000001" minWidth="10.0" prefWidth="11.0" />
@@ -812,7 +812,7 @@
             </StackPane>
          </children>
       </HBox>
-      <StackPane fx:id="tabContainer" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <StackPane fx:id="tabContainer" prefHeight="425.0" prefWidth="351.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
          <children>
             <Pane id="newPartie" prefHeight="200.0" prefWidth="200.0">
                <children>
@@ -839,7 +839,7 @@
                               <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <ScrollPane id="newPartieScroll" prefHeight="160.0" prefWidth="338.0">
+                        <ScrollPane id="newPartieScroll" prefHeight="160.0" prefWidth="337.0" stylesheets="@style/styleScrollPane.css">
                            <content>
                               <VBox>
                               </VBox>
@@ -2383,7 +2383,7 @@
             </Pane>
          </children>
       </StackPane>
-      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2b2b2b;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #302e2b;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
    </children>
    <padding>
       <Insets left="5.0" />

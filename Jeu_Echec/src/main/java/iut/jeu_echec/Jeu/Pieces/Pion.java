@@ -5,14 +5,30 @@ import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Class Pion héritant de la classe Piece
+ * Représente un pion dans le jeu d'échec.
+ * Le pion peut se déplacer de deux case lors de son premier moove uniquement.
+ * Il ne peut avanceé que verticalement et uniquement devant lui
+ * Pour manger un pion adverse, il ne peut que manger en diagonal
+ */
 public class Pion extends Piece {
 
-
+    /**
+     * Constructeurs de la classe Pion
+     *
+     * @param equipe L'équipe a laquelle appartient le Pion.
+     * @param x La position sur l'axe des abscisses du Pion sur l'échiquier.
+     * @param y La position sur l'axe des ordonnées du Pion sur l'échiquier.
+     */
     public Pion(byte equipe, int x, int y) {
         super(Pieces.PION,equipe,x,y);
     }
 
+    /**
+     * Méthode calculant la liste des mouvements valides du Pion à sa
+     * @return Les mouvements valides
+     */
     @Override
     public List<Pair<Integer,Integer>> mouvementValides() {
         final int posX = this.getX();
@@ -72,12 +88,20 @@ public class Pion extends Piece {
     };
 
 
+    /**
+     * Récupere l'image du Pion selon le chemin indiquée
+     * @return L'image du Pion
+     */
     public String getImage() {
         return this.getEquipe() == TableauEchec.eNoir ? "/iut/jeu_echec/imgs/pions/bp.png" : "/iut/jeu_echec/imgs/pions/wp.png";
     }
 
 
-
+    /**
+     *Redéfinition de "toString"
+     *
+     * @return Type piece et équipe
+     */
     @Override
     public String toString() {
         return "P" + (this.getEquipe() == (byte)0 ? "_N" : "_B");

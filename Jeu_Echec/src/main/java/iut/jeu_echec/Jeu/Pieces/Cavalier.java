@@ -24,11 +24,9 @@ public class Cavalier extends Piece {
     }
 
     /**
-     * Méthode calculant la liste des mouvements valides du Cavalier à sa
-     * position actuelle.
+     * Méthode calculant la liste des mouvements valides de la Dame à sa
      *
-     * @return Une liste de paires (x,y) représentant toutes les positions
-     * valides où le Cavalier peut se déplacer.
+     * @return Les mouvements valides
      */
     @Override
     public List<Pair<Integer, Integer>> mouvementValides() {
@@ -62,21 +60,17 @@ public class Cavalier extends Piece {
 
 
     /**
-     * Méthode renvoyant l'URL de l'image représentant la pièce du Cavalier
-     * en fonction de son équipe.
-     *
-     * @return Une chaîne de caractère correspondant au chemin vers
-     * l'image du Cavalier.
+     * Récupere l'image du cavalier selon le chemin indiquée
+     * @return L'image du cavalier
      */
     public String getImage() {
         return this.getEquipe() == TableauEchec.eNoir ? "/iut/jeu_echec/imgs/pions/bn.png" : "/iut/jeu_echec/imgs/pions/wn.png";
     }
 
     /**
-     * Méthode renvoyant une représentation en quelques caractères la pièce
-     * du Cavalier.
+     *Redéfinition de "toString"
      *
-     * @return Une chaîne de caractère correspondant au Cavalier noir ou blanc
+     * @return Type piece et équipe
      */
     @Override
     public String toString() {

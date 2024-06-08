@@ -58,6 +58,13 @@ public class GameController {
     private Label tempsJoueurNoir;
 
 
+    /**
+     * Constructeur de la classe GameController.
+     * Initialise le grid pane, les chronomètres et les listeners.
+     * @param tableauGrid Le gridpane qui va servir d'échéquier
+     * @param tempsJoueurBlanc Initialisation du chronométre blanc
+     * @param tempsJoueurNoir Initialisation du chronométre blanc
+     */
     public GameController(GridPane tableauGrid, Label tempsJoueurBlanc, Label tempsJoueurNoir) {
         this.tableauGrid = tableauGrid;
         this.tempsJoueurBlanc = tempsJoueurBlanc;
@@ -76,7 +83,9 @@ public class GameController {
     }
 
 
-
+    /**
+     * Configuration et creation du timer,
+     */
     public void createTimer() {
         TableauEchec.whiteTimeSeconds = 60 * 10;
         TableauEchec.blackTimeSeconds = 60 * 10;
@@ -127,6 +136,10 @@ public class GameController {
         }));
         timers.setCycleCount(Timeline.INDEFINITE);
     }
+
+    /**
+     * La fonction lance une game, met les chronométres et ajoutes les piéces
+     */
     public void startGame() {
         TableauEchec.joueurBlanc = null;
         TableauEchec.joueurNoir = null;
@@ -173,6 +186,7 @@ public class GameController {
      * Gere la sélection des différentes pieces, la capture, et le retour visuel des mouvements
      * @param spane La case cliqué
      */
+
     private void handleSquareClick(StackPane spane) {
 
         Integer rowIndex = GridPane.getRowIndex(spane);
