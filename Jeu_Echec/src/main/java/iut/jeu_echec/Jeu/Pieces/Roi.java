@@ -1,12 +1,17 @@
 package iut.jeu_echec.Jeu.Pieces;
 
-import iut.jeu_echec.Jeu.TableEchec;
+import iut.jeu_echec.Jeu.TableauEchec;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Roi extends Piece{
+
+
+
+    private boolean enEchec = false;
+
     public Roi(byte equipe, int x, int y) {
         super(Pieces.ROI,equipe,x,y);
     }
@@ -17,6 +22,7 @@ public class Roi extends Piece{
         final int posY = this.getY();
         List<Pair<Integer,Integer>> mvtValides = new ArrayList<>();
 
+        // toutes les positions possibles du cavalier autour de lui
         int[][] mvtPossibles = {
                 {posX - 1, posY}, {posX - 1, posY + 1},
                 {posX, posY + 1}, {posX + 1, posY + 1},
@@ -27,25 +33,32 @@ public class Roi extends Piece{
             int newX = move[0];
             int newY = move[1];
 
-            // Check if the move is within bounds
+            // Vérifie que le roi reste dans la grille
             if (newX >= 0 && newX < 8 && newY >= 0 && newY < 8) {
-                Piece destinationPiece = TableEchec.BOARD[newX][newY];
-                // If the destination is empty or has an opponent's piece, it's a valid move
+                Piece destinationPiece = TableauEchec.BOARD[newX][newY];
+                // Si la case de destination est vide ou contient un ennemi, le mouvement est valide
+
                 if (destinationPiece == null || (destinationPiece != null && destinationPiece.getEquipe() != this.getEquipe())) {
                     mvtValides.add(new Pair<>(newX, newY));
                 }
             }
         }
-
-
         return mvtValides;
     }
 
-
-    @Override
-    public void graphic() {
-
+    public boolean estEnEchec() {
+        return enEchec;
     }
+
+    public void setEstEnEchec(boolean estEnEchec) {
+        this.enEchec = estEnEchec;
+    }
+
+    public String getImage() {
+        return this.getEquipe() == TableauEchec.eNoir ? "/iut/jeu_echec/imgs/pions/bk.png" : "/iut/jeu_echec/imgs/pions/wk.png";
+    }
+
+
 
     @Override
     public String toString() {

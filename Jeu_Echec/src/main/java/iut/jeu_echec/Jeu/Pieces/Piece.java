@@ -1,16 +1,17 @@
 package iut.jeu_echec.Jeu.Pieces;
 
-import iut.jeu_echec.Jeu.TableEchec;
+import iut.jeu_echec.Jeu.TableauEchec;
+import javafx.scene.image.Image;
 import javafx.util.Pair;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public abstract class Piece {
     private int typePiece;
     private int x;
     private int y;
-    private byte equipe;
+    private final byte equipe;
 
 
     Piece(Pieces type, byte equipe, int x, int y) {
@@ -22,31 +23,51 @@ public abstract class Piece {
 
     public abstract List<Pair<Integer,Integer>> mouvementValides();
 
-    public void mouvement(List<Pair<Integer,Integer>> mvtValides) {
+
+    public void afficheMouvement(List<Pair<Integer,Integer>> mvtValides) {
         System.out.println("Mouvements valides: ");
         for (int i = 0; i < mvtValides.size(); ++i) {
             Pair<Integer, Integer> move = mvtValides.get(i);
             System.out.println("Move #" + i + ": (" + move.getKey() + ", " + move.getValue() + ")");
         }
+    }
 
-        System.out.println("Entrez le numéro que vous voulez jouer: ");
-        Scanner in = new Scanner(System.in);
+    public void mouvement(List<Pair<Integer,Integer>> mvtValides, Pair<Integer,Integer> caseVoulue) {
+        afficheMouvement(mvtValides);
 
-        int key = in.nextInt();
+        boolean estValide = mvtValides.contains(caseVoulue);
 
         try {
-            Pair<Integer,Integer> move = mvtValides.get(key);
-            final int oldX = this.getX();
-            final int oldY = this.getY();
-            this.setX(move.getKey());
-            this.setY(move.getValue());
-
-            TableEchec.updateBoard(this,oldX,oldY);
-        } catch (IndexOutOfBoundsException e) {
-            return;
+            if (estValide) {
+                final int oldX = this.getX();
+                final int oldY = this.getY();
+                this.setX(caseVoulue.getKey());
+                this.setY(caseVoulue.getValue());
+                TableauEchec.updateBoard(this,oldX,oldY);
+            } else {
+                System.out.println("Mouvement invalide");
+            }
+        } catch (IndexOutOfBoundsException ignored) {
         }
     }
-    public abstract void graphic();
+
+
+    public static List<Pair<Integer, Integer>> canEat(List<Pair<Integer, Integer>> mouvementsValides) {
+
+        List<Pair<Integer, Integer>> eatable = new ArrayList<>();
+
+        if (mouvementsValides == null) {
+            return eatable;
+        }
+
+        for (Pair<Integer, Integer> move : mouvementsValides) {
+            if (TableauEchec.BOARD[move.getKey()][move.getValue()] != null) {
+                eatable.add(move);
+            }
+        }
+
+        return eatable;
+    }
 
 
     public int getX() {
@@ -64,6 +85,8 @@ public abstract class Piece {
     public void setY(int y) {
         this.y = y;
     }
+
+    public abstract String getImage();
 
     public byte getEquipe() {
         return equipe;

@@ -1,7 +1,6 @@
 package iut.jeu_echec.Jeu;
 
 import iut.jeu_echec.Jeu.Pieces.*;
-import javafx.scene.control.Tab;
 
 import java.util.Scanner;
 
@@ -11,10 +10,10 @@ public class Main {
 
         // 0 noir 1 blanc
 
-        Piece[][] test_board = TableEchec.BOARD;
+        Piece[][] test_board = TableauEchec.BOARD;
 
 
-        TableEchec.afficheBoard(test_board);
+        TableauEchec.afficheBoard(test_board);
 
         Scanner in = new Scanner(System.in);
 
@@ -33,9 +32,9 @@ public class Main {
             Piece pp = test_board[x][y];
             if (pp == null)
                 continue;
-            pp.mouvement(pp.mouvementValides());
+            //pp.mouvement(pp.mouvementValides());
 
-            TableEchec.afficheBoard(test_board);
+            TableauEchec.afficheBoard(test_board);
 
 
         }
