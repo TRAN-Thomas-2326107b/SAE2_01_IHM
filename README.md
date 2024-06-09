@@ -12,6 +12,8 @@ Créer un jeu d’échecs qui ressemble le plus à celui disponible sur le site 
 - __JcJ__ : Deux joueurs peuvent jouer simultanément sur la même machine tour à tour.
 - __JcB__ : Un joueur peut jouer seul contre un bot qui déplacera ses pions de manière aléatoire.
 - __Historique des parties__ : Les utilisateurs peuvent accéder à un historique des parties récapitulant toutes les parties jouées sur la machine.
+- __Chronomètre__ : Lorsque le chronomètre d'un des joueurs est écoulé, celui-ci perd la partie.
+- __Echec et mat__ : La case du roi se colore en orange lorsqu'il est menacé.
 
 
 ## Lancement d'une partie :
