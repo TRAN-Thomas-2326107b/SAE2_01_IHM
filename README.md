@@ -28,7 +28,7 @@ Créer un jeu d’échecs qui ressemble le plus à celui disponible sur le site 
 - CSS
 
 
-## Auteur :
+## Auteurs :
 - AVIAS-Daphne-2326010
 - MEHMED-Ersan-2326077aa
 - SENE-Pablo-2326099b
