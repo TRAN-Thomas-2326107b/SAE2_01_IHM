@@ -1,0 +1,5 @@
+module:iut.jeu_echec
+iut.jeu_echec
+iut.jeu_echec.controllers
+iut.jeu_echec.Jeu
+iut.jeu_echec.Jeu.Pieces
